@@ -23,4 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check patch status
-        run: apt upgradable --list
+        run: apt list --upgradable
