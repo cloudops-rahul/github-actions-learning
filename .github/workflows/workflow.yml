@@ -1,4 +1,14 @@
-Workflow - must have a name
-Jobs - should be inside a workflow
-Steps - should be inside the jobs
-Actions - should be inside the steps.
+#Workflow - must have a name
+name: Workfow
+
+#Tells when workflow should run
+on: 
+  workflow_dispatch:
+
+#Jobs - should be inside a workflow
+jobs:
+  say-hello:
+    runs-on: ubuntu-slim
+    steps:
+      - name:  Say Hello
+        run: echo "Hello Everyone"
