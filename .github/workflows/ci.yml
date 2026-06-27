@@ -14,19 +14,12 @@ jobs:
       - name: Checking User Details
         run: w
 
-  update:
+  bash-completion:
     needs: uptime
     runs-on: ubuntu-latest
     steps:
       - name: Update Cache
         run: sudo apt-get update
 
-      - name: Install Patches 
-        run: sudo apt-get upgrade -y
-
-  validate:
-    needs: update
-    runs-on: ubuntu-latest
-    steps:
-      - name: Update Cache
-        run: sudo apt-get dist-upgrade -y
+      - name: Install bash-completion
+        run: sudo apt-get install bash-completion -y
