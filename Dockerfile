@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE  80
 
-RUN ["python", "run.py"]
+CMD ["python", "run.py"]
