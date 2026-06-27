@@ -2,10 +2,10 @@ name: Build
 
 on:
   push:
-    branches:
-      - linter
+    branches: [linter]
+  
   workflow_run: [Scan Code]
-    types: [completed]
+  types: [completed]
 
 jobs:
   checkout-code:
