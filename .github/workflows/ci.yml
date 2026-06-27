@@ -3,7 +3,7 @@ name: Build and Push latest Images
 on:
   push:
     branches:
-      - main
+      - linter
 
 jobs:
   checkout-code:
