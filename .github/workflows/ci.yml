@@ -16,6 +16,7 @@ jobs:
           password: ${{ secrets.DOCKER_PAT }}
     
   build-images:
+    needs: checkout-code
     runs-on: self-hosted
     steps:
       - uses: docker/build-push-action@v7
