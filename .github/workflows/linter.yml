@@ -5,19 +5,19 @@ on:
     paths: "*.py"
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout Code
-      uses: actions/checkout@v7
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
 
-    - name: Setup Python
-      uses: actions/setup-python@v6
-      
-    - name: Install Linter
-      run:  pip install ruff
-      
-    - name: Validate Code
-      run:  ruff check .
-
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        
+      - name: Install Linter
+        run:  pip install ruff
+        
+      - name: Validate Code
+        run:  ruff check .
 
   
