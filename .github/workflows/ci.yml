@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [linter]
+    branches: [mail]
   
   workflow_run: 
     workflows: [Scan Code]
