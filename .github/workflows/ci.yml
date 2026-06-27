@@ -1,7 +1,9 @@
 name: wokflow
 
 on:
-  push: [main]
+  push:
+    branches:
+      - main
 
 jobs:
   uptime:
