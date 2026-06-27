@@ -1,4 +1,4 @@
-name: Scan python code syntax
+name: Scan Code
 
 on:
   push:
