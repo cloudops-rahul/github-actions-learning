@@ -20,8 +20,17 @@ jobs:
           key: ${{ secrets.KEY }}
           # port: ${{ secrets.PORT }}
           script: |
-            mkdir sample-python-app && cd sample-python-app
+            if [ ! -d ~/sample-python-app ]; then
+              git clone ${{ github.server_url }}/${{ github.repository }}.git ~/sample-python-app
+            fi
+            cd ~/sample-python-app
             git pull origin main
+            if [ ! -f .env ]; then
+              echo "ERROR: ~/sample-python-app/.env is missing. Create it once with DOCKERHUB_USER and DB credentials."
+              exit 1
+            fi
             docker compose pull
             docker compose up -d
             echo `hostname;hostname -I`
+            echo ${{ github.server_url }}
+            echo ${{ github.repository }}
